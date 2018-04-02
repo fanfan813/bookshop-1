@@ -31,11 +31,11 @@
 	<div class="main_box">
 		<div class="login_box">
 			<div class="login_logo">
-				<a href="${baseUrl}/index"><img src="images/logo.jpg" ></a>
+				<a href="/index"><img src="images/logo.jpg" ></a>
 			</div>
 		
 			<div class="login_form">
-				<form action="${baseUrl}/login" id="login_form" method="post">
+				<form action="/login" id="login_form" method="post">
 					<div class="form-group">
 						<label for="j_username" class="t">用户名：</label> 
 						<input id="username" value="" name="username" type="text" class="form-control x319 in" 
@@ -49,13 +49,13 @@
 					<div class="form-group">
 						<label for="j_captcha" class="t">验证码：</label>
 						 <input id="j_captcha" name="j_captcha" type="text" class="form-control x164 in">
-						<img id="captcha_img" alt="点击更换" title="点击更换" src="${baseUrl}/validate_code/get" class="m" width="150" height="50" onclick="changeValidateCode('${baseUrl}')">
+						<img id="captcha_img" alt="点击更换" title="点击更换" src="/validate_code/get" class="m" width="150" height="50" onclick="changeValidateCode('')">
 					</div>
 					<div class="form-group">
 						<label class="t"></label>
 						<label for="j_remember" class="m">
 						<input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-						<label for="j_remember" class="m"><a href="${baseUrl}/user/to_regist">&nbsp;立即注册&nbsp;</a>&nbsp;&nbsp;&nbsp;<a href="#">&nbsp;忘记密码?&nbsp;</a></label>
+						<label for="j_remember" class="m"><a href="/user/to_regist">&nbsp;立即注册&nbsp;</a>&nbsp;&nbsp;&nbsp;<a href="#">&nbsp;忘记密码?&nbsp;</a></label>
 					</div>
 					<div class="form-group space">
 						<label class="t" style="color: red;">${message}</label>　　　
@@ -66,7 +66,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="bottom">Copyright &copy; 2015 - 2016 <a href="${baseUrl}/index">网上书店</a></div>
+		<div class="bottom">Copyright &copy; 2015 - 2016 <a href="/index">网上书店</a></div>
 	</div>
 </div>
 

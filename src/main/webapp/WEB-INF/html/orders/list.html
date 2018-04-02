@@ -3,35 +3,35 @@
 jQuery(function($) {
 } );
 function optDetail(id){
-	$.dialog("${baseUrl}/order/get?id="+id,"订单详情","1100px","500px");
+	$.dialog("/order/get?id="+id,"订单详情","1100px","500px");
 }
 function optPay(oid){
-	$.post("${baseUrl}/order/edit",{state:"1",oid:oid},function(data){
+	$.post("/order/edit",{state:"1",oid:oid},function(data){
 		alertMsg(data.msg.msgText,data.msg.msgStatus);
-		window.location.href="${baseUrl}/order/list?uid=${currentUser.username!}";
+		window.location.href="/order/list?uid=${currentUser.username!}";
 	});
 }
 function optCancel(oid){
-	$.post("${baseUrl}/order/edit",{state:"3",oid:oid},function(data){
+	$.post("/order/edit",{state:"3",oid:oid},function(data){
 		$.confirm("确定取消订单？",function(){
 			alertMsg(data.msg.msgText,data.msg.msgStatus);
-			window.location.href="${baseUrl}/order/list?uid=${currentUser.username!}";
+			window.location.href="/order/list?uid=${currentUser.username!}";
 		});
 	});
 }
 function optDel(oid){
 	$.confirm("确定删除订单？",function(){
-	$.post("${baseUrl}/order/remove",{oid:oid},function(data){
+	$.post("/order/remove",{oid:oid},function(data){
 			alertMsg(data.msg.msgText,data.msg.msgStatus);
-			window.location.href="${baseUrl}/order/list?uid=${currentUser.username!}";
+			window.location.href="/order/list?uid=${currentUser.username!}";
 		});
 	});
 }
 function  optConfirmPay(oid,total){
 	$.confirm("请确定已收到书籍,"+total+"元将自动打入卖家账户",function(){
-		$.post("${baseUrl}/order/edit",{state:"4",oid:oid},function(data){
+		$.post("/order/edit",{state:"4",oid:oid},function(data){
 			alertMsg(data.msg.msgText,data.msg.msgStatus);
-			window.location.href="${baseUrl}/order/list?uid=${currentUser.username!}";
+			window.location.href="/order/list?uid=${currentUser.username!}";
 		});
 	});
 }

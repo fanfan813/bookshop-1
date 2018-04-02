@@ -1,16 +1,16 @@
 <#include "/common/inc_more.html">
-<link rel="stylesheet" href="${baseUrl}/resources/ace/assets/css/ace.css" />
-	<script src="${baseUrl}/resources/js/layer/layer.js"></script>
-      	<script src="${baseUrl}/resources/js/jquery.ext.js"></script>
-	<script src="${baseUrl}/resources/js/layer/extend/layer.ext.js"></script>
-	<script src="${baseUrl}/resources/js/common.js"></script>
+<link rel="stylesheet" href="/resources/ace/assets/css/ace.css" />
+	<script src="/resources/js/layer/layer.js"></script>
+      	<script src="/resources/js/jquery.ext.js"></script>
+	<script src="/resources/js/layer/extend/layer.ext.js"></script>
+	<script src="/resources/js/common.js"></script>
 <body>
 <div class="main-content">
     <div class="main-content-inner">
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
-                    <form id="dForm" method="post" action="${baseUrl}/book/admin/save" class="form-horizontal" role="form" enctype="multipart/form-data">
+                    <form id="dForm" method="post" action="/book/admin/save" class="form-horizontal" role="form" enctype="multipart/form-data">
                     <input type="hidden" id="bid" name="bid" value="${book.bid!}">
 						<div class="form-group">
 							<label class="col-sm-2 control-label no-padding-right" for="bname" >书籍名称</label>

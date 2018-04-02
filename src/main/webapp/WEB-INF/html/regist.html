@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>网上书店</title>
 <#include "/common/inc_more.html"/>
-<link rel="stylesheet" href="${baseUrl}/resources/ace/assets/css/ace.css" />
+<link rel="stylesheet" href="/resources/ace/assets/css/ace.css" />
 <script type="text/javascript">
 $.ajaxSetup({
 	async : false //取消异步
@@ -19,7 +19,7 @@ $.ajaxSetup({
 			$("#username_Error").html("用户名长度必须在1-15之间");
 			return flag;
 		}
-		$.get("${baseUrl}/user/validate_username",{username:username},function(data){
+		$.get("/user/validate_username",{username:username},function(data){
 			$("#username_state").removeClass();
 			if(data.flag==false){
 				$("#username_state").addClass("ace-icon glyphicon glyphicon-remove");
@@ -134,7 +134,7 @@ $.ajaxSetup({
 <body style="margin-left: 25%;margin-right: 25%;background-color: #f6f9fb;height: auto;padding-bottom: 3%;">
 	<div class="center">
 								<h1>
-									<img src="${baseUrl}/images/logo.jpg" height="50px;" width="50px;">
+									<img src="/images/logo.jpg" height="50px;" width="50px;">
 									<span class="red">网上书店</span>
 								</h1>
 								<h4 class="blue" id="id-company-text">&copy;dzq's BookShop</h4>
@@ -154,7 +154,7 @@ $.ajaxSetup({
 											<div class="space-6"></div>
 											<p> 输入注册信息: </p>
 
-											<form action="${baseUrl}/user/regist" method="post" id="dForm">
+											<form action="/user/regist" method="post" id="dForm">
 											<input type="hidden" value="1" id="dFormState">
 												<fieldset style="padding-left: 20%;padding-right: 5%;">
 													<label class="block clearfix">
@@ -231,7 +231,7 @@ $.ajaxSetup({
 										</div>
 
 										<div class="toolbar center">
-											<a href="${baseUrl}/login" data-target="#login-box" class="back-to-login-link">
+											<a href="/login" data-target="#login-box" class="back-to-login-link">
 												<i class="ace-icon fa fa-arrow-left"></i>
 												返回登录
 											</a>

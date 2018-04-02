@@ -50,7 +50,7 @@
 		<script type="text/javascript">
 		jQuery(function($) {
 	    	$( "#tabs" ).tabs();
-	    	$.get("${baseUrl}/category/list",{},function(data){
+	    	$.get("/category/list",{},function(data){
 	    		var html="<option value=''>请选择</option>";
 	    		$.each(data,function(i,category){
 	    			html+="<option value='"+category.cid+"'>"+category.cname+"</option>"
@@ -70,13 +70,13 @@
 			 }
 		 }
 		 function optAdd(){
-		        $.dialog("${baseUrl}/book/admin/to_add","新增","800px","500px");
+		        $.dialog("/book/admin/to_add","新增","800px","500px");
 		 }
 		 function optDel(bid){
 		        $.confirm("确认删除？", function(){
 		            $.ajax({
 		                type:"POST",
-		                url:"${baseUrl}/book/admin/remove",
+		                url:"/book/admin/remove",
 		                data:'bid='+bid,
 		                cache:false,
 		                async:false,
@@ -89,7 +89,7 @@
 		        });
 		    }
 		 function optEdit(bid){
-			 $.dialog("${baseUrl}/book/admin/to_edit?bid="+bid,"修改","800px","500px");
+			 $.dialog("/book/admin/to_edit?bid="+bid,"修改","800px","500px");
 		 }
 		 function query(){
 		        optReloadGrid();

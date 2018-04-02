@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
  <#include "/common/inc.html"/>
  <#include "/common/inc_more.html"/>
- <link rel="stylesheet" href="${baseUrl}/resources/ace/assets/css/select2.css" />
- <link rel="stylesheet" href="${baseUrl}/resources/ace/assets/css/font-awesome.css" />
- <link rel="stylesheet" href="${baseUrl}/resources/ace/assets/css/ace.css" />
+ <link rel="stylesheet" href="/resources/ace/assets/css/select2.css" />
+ <link rel="stylesheet" href="/resources/ace/assets/css/font-awesome.css" />
+ <link rel="stylesheet" href="/resources/ace/assets/css/ace.css" />
 </head>
 <body>
 	<div class="main-content">
@@ -14,7 +14,7 @@
         	<div class="page-content">
             	<div class="row">
                 	<div class="col-xs-12">
-                	 <form id="dForm" method="post" action="${baseUrl}/address/save" class="form-horizontal" role="form" enctype="multipart/form-data">
+                	 <form id="dForm" method="post" action="/address/save" class="form-horizontal" role="form" enctype="multipart/form-data">
                 	 	<input type="hidden" name="isDefault" id="isDefault">
                 	 	<input type="hidden" name="id" value="${address.id!}">
                 		<div class="form-group">
