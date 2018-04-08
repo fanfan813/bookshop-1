@@ -78,7 +78,8 @@ public class UserServiceImpl implements UserService {
 			user.setUid(UUIDutil.getUUID());
 			user.setCode(UUIDutil.getUUID());
 			user.setSalt(Encodes.encodeHex(Digests.generateSalt(8)));
-			user.setPassword(CryptUtil.cryptPwd(user.getPassword(), user.getSalt()));
+//			user.setPassword(CryptUtil.cryptPwd(user.getPassword(), user.getSalt()));
+			user.setPassword(user.getPassword());
 			userMapper.insert(user);
 		}else{
 			throw new Exception("用户名已存在");

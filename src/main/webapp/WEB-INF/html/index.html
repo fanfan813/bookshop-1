@@ -6,7 +6,7 @@
 		<div id="demo1" class="slideBox">
   					<ul class="items" id="recommend_items">
   		<#list recommendbooks.rows as recommendbook>
-   	 <li><a href="/book/get?id=${recommendbook.bid!}&cid=${recommendbook.cid!}" title="${recommendbook.bname!}"><img src="${showImgUrl!}/${recommendbook.image!}" width="900px;" height="340px;"></a></li>
+   	 <li><a href="/book/get?id=${recommendbook.bid!}&cid=${recommendbook.cid!}" title="${recommendbook.bname!}"><img src="${recommendbook.image!}" width="900px;" height="340px;"></a></li>
 		</#list> 
 </ul>
 </div>
@@ -32,7 +32,7 @@
                         <div class="book">
 						<a href="/book/get?id=${hotbook.bid}&cid=${hotbook.cid!}">
                          <div class="book-cover" style="padding-left: 17px;">
-                          <img width="140" height="212" alt="" src="${showImgUrl!}/${hotbook.image!}" data-echo="images/3_blank.gif">
+                          <img width="140" height="212" alt="" src="${hotbook.image!}" data-echo="images/3_blank.gif">
                                 <#if hotbook_index==0>
 								 <div class="tag">
                                         <span>hot</span>

@@ -41,12 +41,12 @@ public class HomeController extends BaseController{
 	public String loginPost(HttpServletRequest request,ModelMap m){
 		String username=get(request, "username");
 		String password=get(request, "password");
-		String validate=get(request, "j_captcha");
-		String sValidate=request.getSession().getAttribute("validate").toString();
-		if(!sValidate.toLowerCase().equals(validate.toLowerCase())){
-			m.addAttribute("message", "验证码不正确!");
-			return "login";
-		}
+//		String validate=get(request, "j_captcha");
+//		String sValidate=request.getSession().getAttribute("validate").toString();
+//		if(!sValidate.toLowerCase().equals(validate.toLowerCase())){
+//			m.addAttribute("message", "验证码不正确!");
+//			return "login";
+//		}
 		try{
 			userService.login(username,password);
 			Role role=SecurityUtil.getCurrentRole();
