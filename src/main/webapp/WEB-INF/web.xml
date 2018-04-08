@@ -21,7 +21,7 @@
     </listener>
     <!-- 在项目启动之前加载一些数据的listener-->
     <listener>
-        <listener-class>cn.hnust.system.SpringInit</listener-class>
+        <listener-class>com.book.system.SpringInit</listener-class>
     </listener>
     <!-- shiro安全框架配置  应将此filter-mapping放置在所有filter之前，以达到shiro过滤目的 -->
    <filter>  

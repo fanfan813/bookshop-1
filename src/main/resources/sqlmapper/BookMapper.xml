@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hnust.dao.BookMapper">
-    <resultMap type="cn.hnust.domain.Book" id="baseResultMap">
+<mapper namespace="com.book.dao.BookMapper">
+    <resultMap type="com.book.domain.Book" id="baseResultMap">
         <id column="bid" property="bid"/>
         <result column="bname" property="bname"/>
         <result column="price" property="price"/>
@@ -13,7 +13,7 @@
         <result column="blurb" property="blurb"/>
         <result column="recommend" property="recommend"/>
     </resultMap>
-    <insert id="insert" parameterType="cn.hnust.domain.Book">
+    <insert id="insert" parameterType="com.book.domain.Book">
         INSERT INTO book
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="bid != null and bid !=''" >
@@ -62,7 +62,7 @@
             </if>
         </trim>
     </insert>
-    <update id="update" parameterType="cn.hnust.domain.Book">
+    <update id="update" parameterType="com.book.domain.Book">
         UPDATE book 
         <set>
             <if test="bname !=null and bname !=''">
@@ -113,7 +113,7 @@
         SELECT COUNT(*) FROM book b WHERE 1=1
         <include refid="queryCondition"></include>
     </select>
-    <select id="findById" parameterType="java.lang.String" resultType="cn.hnust.domain.Book">
+    <select id="findById" parameterType="java.lang.String" resultType="com.book.domain.Book">
         SELECT c.cname,b.* FROM category c,book b WHERE b.bid=#{id} AND c.cid=b.cid
     </select>
     <delete id="deleteById" parameterType="java.lang.String">

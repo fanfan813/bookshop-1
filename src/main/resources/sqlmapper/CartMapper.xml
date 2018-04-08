@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper  namespace="cn.hnust.dao.CartMapper">
-    <resultMap type="cn.hnust.domain.Cart" id="baseResult">
+<mapper  namespace="com.book.dao.CartMapper">
+    <resultMap type="com.book.domain.Cart" id="baseResult">
         <id column="id" property="id"/>
         <result column="bid" property="bid"/>
         <result column="count" property="count"/>
@@ -34,7 +34,7 @@
             </if>
         </if>
     </sql>
-     <insert id="insert" parameterType="cn.hnust.domain.Cart">
+     <insert id="insert" parameterType="com.book.domain.Cart">
         insert into cart
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null and id !=''" >
@@ -86,7 +86,7 @@
     <select id="statistics" parameterType="java.lang.String" resultType="map">
         SELECT COUNT(*) AS `count`,SUM(CAST(total_price AS DECIMAL(9,1))*COUNT) AS totalmoney  FROM cart c WHERE c.uid=#{username};
     </select>
-    <update id="update" parameterType="cn.hnust.domain.Cart">
+    <update id="update" parameterType="com.book.domain.Cart">
         UPDATE cart 
         <set>
             <if test="bid !=null and bid !=''">

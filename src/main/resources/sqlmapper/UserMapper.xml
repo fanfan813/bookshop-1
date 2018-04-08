@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hnust.dao.UserMapper">
-     <resultMap id="baseResultMap" type="cn.hnust.domain.User">
+<mapper namespace="com.book.dao.UserMapper">
+     <resultMap id="baseResultMap" type="com.book.domain.User">
         <id column="uid" property="uid" jdbcType="VARCHAR"/>
         <result column="username" property="username" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
@@ -30,7 +30,7 @@
             order by ${orderBy}
         </if>
     </select>
-     <update id="update" parameterType="cn.hnust.domain.User">
+     <update id="update" parameterType="com.book.domain.User">
         UPDATE `user` 
         <set>
             <if test="password !=null and password !=''">
@@ -57,7 +57,7 @@
         </set>
         WHERE username=#{username}
     </update>
-    <insert id="insert" parameterType="cn.hnust.domain.User">
+    <insert id="insert" parameterType="com.book.domain.User">
         insert into `user`
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="uid != null and uid !=''" >

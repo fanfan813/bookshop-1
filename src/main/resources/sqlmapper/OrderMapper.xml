@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hnust.dao.OrderMapper">
-    <resultMap type="cn.hnust.domain.Order" id="baseResult">
+<mapper namespace="com.book.dao.OrderMapper">
+    <resultMap type="com.book.domain.Order" id="baseResult">
         <id column="oid" property="oid"/>
         <result column="total" property="total"/>
        	<result column="state" property="state"/>
@@ -10,7 +10,7 @@
         <result column="address" property="address"/>
         <result column="date" property="date"/>
     </resultMap>
-    <insert id="insert" parameterType="cn.hnust.domain.Order">
+    <insert id="insert" parameterType="com.book.domain.Order">
         INSERT INTO orders
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="oid !=null and oid !=''">
@@ -73,7 +73,7 @@
             </if>
         </if>
     </sql>
-    <update id="update" parameterType="cn.hnust.domain.Order">
+    <update id="update" parameterType="com.book.domain.Order">
         UPDATE orders
         <set>
             <if test="state !=null and state !=''">

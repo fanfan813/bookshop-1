@@ -16,7 +16,7 @@
 	   <context:property-placeholder ignore-unresolvable="true" location="classpath*:/db.properties"/>
 	   <tx:annotation-driven/>
 	   <context:annotation-config />
-	   <context:component-scan base-package="cn.hnust">
+	   <context:component-scan base-package="com.book">
 	   		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	   </context:component-scan>
 	   <!-- 用c3p0连接池配置数据源 -->
@@ -33,14 +33,14 @@
 	   </bean>
 	   <!-- 自动装配Mybatis的dao接口 -->
 	   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="cn.hnust.dao" />
+		<property name="basePackage" value="com.book.dao" />
 		</bean>
 		<!-- spring的jdbc事务管理器 -->
 		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 		</bean>  
 		<!-- 继承自AuthorizingRealm的自定义Realm,指定shiro验证登录的自定义类	-->
-		<bean id="realm" class="cn.hnust.security.Realm"/>
+		<bean id="realm" class="com.book.security.Realm"/>
 	    <!-- 缓存管理器 使用Ehcache实现-->  
    		 <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">  
         <!-- 缓存配置文件的存放地址 -->

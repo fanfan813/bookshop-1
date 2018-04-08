@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hnust.dao.OrderitemMapper">
-    <resultMap type="cn.hnust.domain.Orderitem" id="baseResult">
+<mapper namespace="com.book.dao.OrderitemMapper">
+    <resultMap type="com.book.domain.Orderitem" id="baseResult">
         <id column="iid" property="iid"/>
         <result column="count" property="count"/>
         <result column="subtotal" property="subTotal"/>
        	<result column="oid" property="oid"/>
         <result column="bid" property="bid"/>
     </resultMap>
-    <insert id="insert" parameterType="cn.hnust.domain.Orderitem">
+    <insert id="insert" parameterType="com.book.domain.Orderitem">
         INSERT INTO orderitem
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="iid !=null and iid !=''">

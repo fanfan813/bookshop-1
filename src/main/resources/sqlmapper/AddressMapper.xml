@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hnust.dao.AddressMapper">
-    <resultMap type="cn.hnust.domain.Address" id="baseResult">
+<mapper namespace="com.book.dao.AddressMapper">
+    <resultMap type="com.book.domain.Address" id="baseResult">
         <id column="id" property="id"/>
         <result column="detail" property="detail"/>
         <result column="username" property="username"/>
@@ -42,7 +42,7 @@
         </set>
         WHERE id=#{id}
     </update>
-    <update id="update" parameterType="cn.hnust.domain.Address">
+    <update id="update" parameterType="com.book.domain.Address">
         UPDATE address
         <set>
             <if test="detail !=null and detail !=''">
@@ -75,7 +75,7 @@
         </set>
         WHERE id=#{id}
     </update>
-    <insert id="insert" parameterType="cn.hnust.domain.Address">
+    <insert id="insert" parameterType="com.book.domain.Address">
         insert into address
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id !=null and id !=''">

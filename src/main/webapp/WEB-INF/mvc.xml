@@ -34,7 +34,7 @@
 		</mvc:message-converters>
        </mvc:annotation-driven>
        <mvc:default-servlet-handler/>
-       <context:component-scan base-package="cn.hnust">
+       <context:component-scan base-package="com.book">
        		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
        </context:component-scan>
      <!-- 设置freeMarker的配置文件路径 -->

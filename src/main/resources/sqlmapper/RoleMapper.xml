@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hnust.dao.RoleMapper">
-    <resultMap type="cn.hnust.domain.Role" id="baseResult">
+<mapper namespace="com.book.dao.RoleMapper">
+    <resultMap type="com.book.domain.Role" id="baseResult">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="state" property="state"/>
