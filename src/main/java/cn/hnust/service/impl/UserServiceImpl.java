@@ -35,7 +35,8 @@ public class UserServiceImpl implements UserService {
 		Subject currentUser=SecurityUtils.getSubject();
 		User user=findByUserName(username);
 		if(user !=null){
-			password=CryptUtil.cryptPwd(password, user.getSalt());
+//			password=CryptUtil.cryptPwd(password, user.getSalt());
+			password=password;
 		}
 		if(user.getState()==0){
 			throw new UserException("用户未激活！");
